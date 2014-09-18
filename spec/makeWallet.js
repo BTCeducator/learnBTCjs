@@ -2,6 +2,12 @@ var path = require('path');
 var expect = require('chai').expect;
 var Bitcoin = require('bitcoinjs-lib');
 var base58check = require('bs58check');
+var helloblock = require('helloblock-js')({
+  network: 'testnet',
+  debug: true
+});
+var request = require('request');
+var promise = require('bluebird');
 
 var MakeWallet = require(path.join(__dirname, '..', './makeWallet.js'));
 
@@ -29,8 +35,8 @@ describe('MakeWallet', function () {
     expect(wallet.privateKey).to.be.ok;
   });
 
-  it('should have a balance property', function(){
-    expect(wallet.balance).to.be.ok;
+  it('should have a transaction method', function(){
+    expect(wallet.transaction).to.be.a('function');
   });
 
   describe('address', function(){
@@ -69,6 +75,26 @@ describe('MakeWallet', function () {
 
     it('should be a testnet private key', function(){
       expect(wallet.privateKey[0]).to.match(/K|L/);
+    });
+
+  });
+
+  describe('transactions', function(){
+    
+    xit('should take in an amount and to address', function(){
+      expect(wallet.transaction(100, 'testAddress'));
+    });
+
+    it('should send btc to the specified balance', function(done){
+      request("https://https://testnet.helloblock.io/wallet?addresses=n1y9JxYAxk4GvvZecSvwCLLgdmBRp7CLWd", function(error, response, body){
+        var body = JSON.parse(body);
+        var data = body.data;
+        var oldBalance = data.summary.balance;
+        promise.Promisify(wallet.transaction(100000, "n1y9JxYAxk4GvvZecSvwCLLgdmBRp7CLWd"));
+        done();
+        expect(oldBalance).to.not.equal(balance);
+      });
+      
     });
 
   });
