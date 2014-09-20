@@ -7,7 +7,7 @@ var helloblock = require('helloblock-js')({
 var request = require('request');
 var Promise = require('bluebird');
 
-var Transaction = require(path.join(__dirname, '..', './sendTransaction.js'));
+var Transaction = require(path.join(__dirname, '..', './Transaction.js'));
 
 describe('Transaction', function(){
 
