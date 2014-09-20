@@ -29,10 +29,6 @@ describe('MakeWallet', function () {
     expect(wallet.privateKey).to.be.ok;
   });
 
-  it('should have a transaction method', function(){
-    expect(wallet.transaction).to.be.a('function');
-  });
-
   describe('address', function(){
 
     it('should be a string', function(){
