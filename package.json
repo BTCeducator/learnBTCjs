@@ -4,12 +4,10 @@
   "version": "0.0.0",
   "dependencies": {
     "bitcoinjs-lib": "^1.0.2",
-    "bluebird": "^2.3.2",
     "bs58": "^1.2.1",
     "bs58check": "^1.0.1",
     "chai": "~1.8.0",
-    "helloblock-js": "^0.2.5",
-    "request": "^2.44.0"
+    "helloblock-js": "^0.2.5"
   },
   "scripts": {
     "test": "mocha ./spec/*.js"
