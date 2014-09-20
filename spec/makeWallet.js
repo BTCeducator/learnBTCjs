@@ -29,10 +29,6 @@ describe('MakeWallet', function () {
     expect(wallet.privateKey).to.be.ok;
   });
 
-  it('should have a balance property', function(){
-    expect(wallet.balance).to.be.ok;
-  });
-
   describe('address', function(){
 
     it('should be a string', function(){
