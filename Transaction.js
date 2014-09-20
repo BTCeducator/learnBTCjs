@@ -11,12 +11,16 @@ var myWallet = new MakeWallet();
 
 var Transaction = {
 
+  address: myWallet.address,
+  privateKey: myWallet.privateKey,
+
   // Your code here...
   build: function(to, amount){
 
+    return transactionHash;
   },
-  
-  propogate: function(transactionHash){
+
+  propagate: function(transactionHash){
 
   }
 
