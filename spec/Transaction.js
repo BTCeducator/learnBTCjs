@@ -4,8 +4,6 @@ var helloblock = require('helloblock-js')({
   network: 'testnet',
   debug: true
 });
-var request = require('request');
-var Promise = require('bluebird');
 
 var Transaction = require(path.join(__dirname, '..', './Transaction.js'));
 
