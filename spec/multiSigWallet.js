@@ -18,4 +18,27 @@ describe('MultiSigWallet()', function(){
     expect(multiSigWallet.privateKeys).to.be.an('Array');
   });
 
+  describe('.address', function(){
+    
+    it('should be a valid testnet wallet address', function(){
+      expect(multiSigWallet.address[0]).to.equal('2');
+      expect(multiSigWallet.address.length).to.equal(35);
+      expect(base58check.decode(multiSigWallet.address)).to.be.ok;
+      expect(multiSigWallet.address)
+    });
+
+  });
+
+  describe('.privateKeys', function(){
+    
+    it('should be valid testnet privateKeys', function(){
+      multiSigWallet.privateKeys.forEach(function(privateKey){
+        expect(privateKey[0]).to.equal('c');
+        expect(privateKey.length).to.equal(52);
+        expect(base58check.decode(privateKey)).to.be.ok;
+      });
+    });
+
+  });
+
 });
