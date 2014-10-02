@@ -12,10 +12,11 @@ describe('MultiSigWallet()', function(){
     expect(MultiSigWallet).to.be.a('function');
   });
 
-  it('should return an object with an address and privateKeys property', function(){
+  it('should return an object with an address, privateKeys and publicKeys property', function(){
     expect(multiSigWallet).to.be.a('object');
     expect(multiSigWallet.address).to.be.a('string');
     expect(multiSigWallet.privateKeys).to.be.an('Array');
+    expect(multiSigWallet.publicKeys).to.be.an('Array');
   });
 
   describe('.address', function(){
@@ -51,6 +52,24 @@ describe('MultiSigWallet()', function(){
       });
     });
 
+  });
+
+  // remove the x to make these extra credit specs run:
+  xdescribe('extra credit:', function(){
+    
+    describe('MultiSigWallet()', function(){
+
+      it('should be able to make an n of m multisignature wallet', function(){
+        var multiSig2pt0 = new MultiSigWallet(3, 5);
+        expect(multiSigWallet.publicKeys.length).to.equal(5);
+        expect(multiSigWallet.privateKeys.length).to.equal(5);
+        expect(multiSigWallet.n).to.equal(3);
+        expect(multiSigWallet.redeemScript.chunks.length).to.equal(8);
+        expect(multiSigWallet.redeemScript.chunks[0]).to.equal(83);
+        expect(multiSigWallet.redeemScript.chunks[6]).to.equal(85);
+      });
+
+    });
   });
 
 });
