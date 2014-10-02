@@ -8,6 +8,7 @@ var MultiSignatureWallet = function(){
   /*
     this.address = 
     this.privateKeys = [];
+    this.publicKeys = [];
    */
 
 };

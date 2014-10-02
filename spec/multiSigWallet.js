@@ -41,4 +41,16 @@ describe('MultiSigWallet()', function(){
 
   });
 
+  describe('.publicKeys', function(){
+    
+    it('should have an array of all public key hexes (used for redeemScript)', function(){
+      expect(multiSigWallet.publicKeys.length).to.equal(3);
+      multiSigWallet.publicKeys.forEach(function(publicKey){
+        expect(publicKey.length).to.equal(66);
+        expect(parseInt(publicKey, 16)).to.be.ok;
+      });
+    });
+
+  });
+
 });
