@@ -40,10 +40,10 @@ describe('Transaction', function(){
       helloblock.faucet.withdraw(Transaction.address, 200000, function(){
         // add funds to the wallet
         var transactionHash = Transaction.build('n1y9JxYAxk4GvvZecSvwCLLgdmBRp7CLWd', 100000);
-        helloblock.addresses.get('n1y9JxYAxk4GvvZecSvwCLLgdmBRp7CLWd', function(error, response, transaction){
+        helloblock.addresses.get('n1y9JxYAxk4GvvZecSvwCLLgdmBRp7CLWd', function(error, response, address){
           // check balance
           if( response.status === 'success' ){
-            var oldBalance = response.data.address.balance;
+            var oldBalance = address.balance;
           }
           // propogate transaction
           Transaction.propagate(transactionHash);
