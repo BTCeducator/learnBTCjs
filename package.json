@@ -10,6 +10,6 @@
     "helloblock-js": "^0.2.5"
   },
   "scripts": {
-    "test": "mocha ./spec/*.js"
+    "test": "mocha ./spec/makeWallet.js && mocha ./spec/Transaction.js && mocha ./spec/multiSigWallet.js && mocha ./spec/multiSigTransaction.js"
   }
 }

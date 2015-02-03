@@ -15,3 +15,6 @@ Make sure you have mocha installed globally:
 Stuck? Visit bitcoinjs.org for hints
 
 After this sprint you'll know Bitcoin-js and Helloblock libraries well enough to make a wallet, build transactions, and broadcast those transactions to the network
+
+##But what is Bitcoin?
+Bitcoin is the leading cryptocurrency. For a refreshingly clear overview, check out [this post](http://www.jacktanlu.io/so-what-about-bitcoin/). For more technical information, see the [bitcoin wiki](https://en.bitcoin.it/wiki/Main_Page)
